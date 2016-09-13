@@ -1,11 +1,11 @@
 <?php
 session_start();
-require('config/config.php');
+require('config/config-sample.php');
 require('model/functions.fn.php');
 
-if( isset($_FILES['music']) && !empty($_FILES['music']) && 
+if( isset($_FILES['music']) && !empty($_FILES['music']) &&
 	isset($_POST['title']) && !empty($_POST['title'])){
-	
+
 	$file = $_FILES['music'];
 
 	// Si le "fichier" reçu est bien un fichier
