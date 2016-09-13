@@ -45,7 +45,7 @@ SUMMARY
 			':password' => $password,
 		));
 
-		
+
 
 	}
 
