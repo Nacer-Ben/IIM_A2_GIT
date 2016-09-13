@@ -44,9 +44,11 @@ SUMMARY
 			':email' => $email,
 			':password' => $password,
 		));
+
 		
 
 	}
+
 
 
 	/*1.2!userConnection
