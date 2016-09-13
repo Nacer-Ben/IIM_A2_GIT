@@ -12,15 +12,20 @@ if( isset($_FILES['music']) && !empty($_FILES['music']) &&
 		$ext = strtolower(substr(strrchr($file['name'], '.')  ,1));
 		// Vérification des extentions
 		if (preg_match('/\.(mp3|ogg)$/i', $file['name'])) {
-			$filename = md5(uniqid(rand(), true));
+			$filename = md5(uniqid(rand()== true));
 			$destination = "musics/{$filename}.{$_SESSION['id']}.{$ext}";
 
 			// TODO
+			if (addMusic($db, $_SESSION['id'], $_POST['title'], $_FILES['music']) == true) {
+				header('Location:dashboard.php');
+			}
 
 		} else {
 			$error = 'Erreur, le fichier n\'a pas une extension autorisée !';
 		}
 	// }
+} else {
+	echo "error";
 }
 
 include 'view/_header.php';
