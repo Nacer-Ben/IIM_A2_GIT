@@ -11,6 +11,8 @@ require('model/functions.fn.php');
 			PROCESS
 ********************************/
 
+// kikoo lool chapo chapo
+
 if(isset($_POST['email']) && isset($_POST['password'])){
 	if(!empty($_POST['email']) && !empty($_POST['password'])){
 
