@@ -18,8 +18,9 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
 		// TODO
 
+		$cryptPassword = hash("sha256",$_POST['password']);
 		// Force user connection to access dashboard
-		if (userConnection($db, $_POST['email'], $_POST['password'])== true) {
+		if (userConnection($db, $_POST['email'], $cryptPassword)== true) {
 
 			header('Location: dashboard.php');
 			

@@ -7,8 +7,9 @@ if(	isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 	!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
 	// TODO
-
-	userRegistration($db, $_POST['username'], $_POST['email'], $_POST['password']);
+	$password = $_POST['password'];
+	$cryptPassword = hash("sha256", $password);
+	userRegistration($db, $_POST['username'], $_POST['email'], $cryptPassword);
 	header('Location: login.php');
 	
 }else{
